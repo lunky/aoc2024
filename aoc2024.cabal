@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Day1
+      Day2
       Lib
   hs-source-dirs:
       src
@@ -61,6 +62,7 @@ test-suite aoc2024-test
   main-is: Spec.hs
   other-modules:
       Day1Spec
+      Day2Spec
       Paths_aoc2024
   autogen-modules:
       Paths_aoc2024
