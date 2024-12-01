@@ -1,16 +1,30 @@
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 module Day1
-    ( 
+    (
     day1
    ,day1b
    ,_input
     )
     where
-    
-day1 :: String -> Int 
-day1 _input = 0 
+
+import Data.List ( group, sort, transpose )
+import Data.List.Split ( splitOn )
+import qualified Data.Map.Strict as Map
+
+day1 :: String -> Int
+day1 input = sum $ map (\(a,b)->abs ( a-b)) $ (\[a,b]->zip a b) $ map Data.List.sort $ parseInput input
 
 day1b :: String -> Int
-day1b _input = 0
+day1b input = sum $ map (\x-> x * Map.findWithDefault 0 x mapb) lista
+    where mapb = Map.fromList $ freq listb
+          [lista, listb] = parseInput input
 
 _input :: String
-_input=""
+_input="3   4\n4   3\n2   5\n1   3\n3   9\n3   3"
+
+parseInput :: String -> [[Int]]
+parseInput input =  Data.List.transpose $ map (map (\y-> read y::Int) . splitOn "   ") (lines input)
+
+
+freq :: Ord a => [a] -> [(a, Int)]
+freq xs = map (\a -> (head a, length a)) $ Data.List.group $ Data.List.sort xs

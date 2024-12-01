@@ -38,6 +38,9 @@ library:
   when:        
   - condition: false        
     other-modules: Paths_aoc2024
+  dependencies:
+  - split
+  - containers
 
 executables:
   aoc2024-exe:
@@ -70,3 +73,4 @@ tests:
     - hspec
     - hspec-discover
     - QuickCheck
+    - split
