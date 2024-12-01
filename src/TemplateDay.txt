@@ -7,8 +7,10 @@ module Day%%DAY_NUMBER%%
     where
     
 day%%DAY_NUMBER%% :: String -> Int 
-day%%DAY_NUMBER%% input = 0 
+day%%DAY_NUMBER%% _input = 0 
 
 day%%DAY_NUMBER%%b :: String -> Int
-day%%DAY_NUMBER%%b input = 0
+day%%DAY_NUMBER%%b _input = 0
+
+_input :: String
 _input=""

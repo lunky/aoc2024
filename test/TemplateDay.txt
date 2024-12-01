@@ -1,4 +1,4 @@
-module Day%%DAY_NUMBER%%Spec where
+module Day%%DAY_NUMBER%%Spec (spec) where
 
 import Day%%DAY_NUMBER%%
 import Test.Hspec
