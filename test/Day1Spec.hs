@@ -5,13 +5,11 @@ import Test.Hspec
 
 spec :: Spec
 spec = do
-  describe "day1" $ do
-    it "should work for pattern 1" $ do
-      let input = ""
+  describe "Day1" $ do
+    xit "should do sample 1" $ do
       let expected = 0
-      day1 input `shouldBe` expected
-  describe "day1b" $ do
-    it "should work for pattern 1" $ do
+      day1 _input `shouldBe` expected
+  describe "Day1b" $ do
+    xit "should do sample 1" $ do
       let expected = 0
-      let input = ""
-      day1b input `shouldBe` expected
+      day1b _input `shouldBe` expected

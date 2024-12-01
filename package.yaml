@@ -52,6 +52,9 @@ executables:
     - containers
     - split
     - parsec
+    - directory 
+    - filepath
+    - text
 
 
 tests:

@@ -30,8 +30,10 @@ makeBlank outputPath dayNumber = do
 getNextNumber path = do
     files <- listDirectory path
     let days = filter (\y -> isSuffixOf ".hs" y && isPrefixOf "Day" y ) files
-    let highest = maximum $ map((\y -> read y::Int ) . filter  isDigit ) days
+    let highest = safeMaximum $ map((\y -> read y::Int ) . filter  isDigit ) days
     return (highest + 1)
+  where  safeMaximum [] = 0
+         safeMaximum xs = maximum xs
     
      
 
