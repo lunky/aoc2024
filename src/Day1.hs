@@ -1,5 +1,4 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
-{-# LANGUAGE TupleSections #-}
 module Day1
     (
     day1
@@ -8,12 +7,13 @@ module Day1
     )
     where
 
-import Data.List ( group, sort, transpose, foldl' )
+import Data.List ( sort, transpose, foldl' )
 import Data.List.Split ( splitOn )
 import qualified Data.Map.Strict as Map
 
 day1 :: String -> Int
-day1 input = sum $ map (\(a,b)->abs ( a-b)) $ (\[a,b]->zip a b) $ map sort $ parseInput input
+day1 input = sum $ map (\(a,b)->abs ( a-b)) $ (\(a:b:_)->zip a b) $ map sort $ parseInput input
+
 
 day1b :: String -> Int
 day1b input = sum $ map (\x-> x * Map.findWithDefault 0 x mapb) lista
