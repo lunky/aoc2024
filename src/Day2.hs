@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
 module Day2
     (
     day2
@@ -21,7 +22,7 @@ safeb xs = safe xs || any safe oneRemoved
 
 deleteAt :: Int -> [a] -> [a]
 deleteAt idx xs = lft ++ rgt
-  where (lft, (_:rgt)) = splitAt idx xs
+  where (lft, _:rgt) = splitAt idx xs
 
 _input :: String
 _input="7 6 4 2 1\n1 2 7 8 9\n9 7 6 2 1\n1 3 2 4 5\n8 6 4 4 1\n1 3 6 7 9"
