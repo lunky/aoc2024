@@ -41,6 +41,7 @@ library:
   dependencies:
   - split
   - containers
+  - parsec
 
 executables:
   aoc2024-exe:
@@ -74,3 +75,4 @@ tests:
     - hspec-discover
     - QuickCheck
     - split
+    - parsec
