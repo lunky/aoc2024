@@ -41,7 +41,9 @@ library:
   dependencies:
   - split
   - containers
+  - array
   - parsec
+  - mtl
 
 executables:
   aoc2024-exe:
